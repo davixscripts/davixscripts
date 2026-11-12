@@ -39,27 +39,58 @@
 @media(max-width:780px){.brand-title{font-size:18px;letter-spacing:.7px}.brand-title strong{letter-spacing:.4px}}
 @media(prefers-reduced-motion:reduce){.edge-ui,.edge-caret{animation:none!important}}
 
-/* DAVIX // Transição clean entre páginas (navegação interna) */
-@view-transition { navigation: auto; }
-@keyframes davix-page-out {
-  from { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-  to   { opacity: 0; transform: translateY(-8px) scale(.994); filter: blur(2px); }
+
+/* DAVIX SOCIAL // Redes sociais — edição neon editorial */
+.social-section{padding:10px 0 78px}
+.social-section .section-title{margin-bottom:12px;text-transform:uppercase;letter-spacing:.7px}
+.social-subtitle{margin:0 0 27px;color:#aa929d;font-size:15px;line-height:1.6}
+.social-cards{gap:18px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.social-card{
+  --social-accent:#ff657c;--social-glow:255,94,127;
+  display:flex;flex-direction:column;position:relative;isolation:isolate;
+  min-height:320px;padding:0;overflow:hidden;border:1px solid rgba(255,84,112,.25);
+  background:radial-gradient(circle at 85% -12%,rgba(var(--social-glow),.105),transparent 49%),
+    linear-gradient(145deg,#190f18,#0d0b11 82%);
+  text-decoration:none;color:#fff;box-shadow:0 13px 28px rgba(0,0,0,.08);
+  transition:transform .38s cubic-bezier(.22,1,.36,1),box-shadow .38s ease,border-color .38s ease,background .4s ease
 }
-@keyframes davix-page-in {
-  from { opacity: 0; transform: translateY(12px) scale(.994); filter: blur(2px); }
-  to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-}
-::view-transition-old(root) {
-  animation: 230ms cubic-bezier(.4,0,.6,1) both davix-page-out;
-}
-::view-transition-new(root) {
-  animation: 400ms cubic-bezier(.22,1,.36,1) both davix-page-in;
-}
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(root), ::view-transition-new(root) {
-    animation-duration: .01ms !important;
-  }
-}
+.social-card:before{content:"";position:absolute;top:0;left:0;right:0;width:auto;height:2px;background:linear-gradient(90deg,var(--social-accent) 0%,rgba(255,255,255,.10) 60%,transparent 95%);box-shadow:0 0 20px rgba(var(--social-glow),.25);z-index:2}
+.social-card:after{content:"";position:absolute;right:-60px;top:43px;width:180px;height:180px;border:1px solid rgba(var(--social-glow),.14);border-radius:50%;pointer-events:none;transition:transform .5s cubic-bezier(.22,1,.36,1);opacity:1}
+.social-card:hover{transform:translateY(-8px);border-color:rgba(var(--social-glow),.6);box-shadow:0 22px 56px rgba(0,0,0,.36),0 0 32px rgba(var(--social-glow),.10)}
+.social-card:hover:after{transform:translate(-9px,5px) scale(1.15)}
+.social-card:focus-visible{outline:2px solid var(--social-accent);outline-offset:4px}
+.social-card .card-accent-rail{position:absolute;right:0;top:75px;width:3px;height:70px;background:linear-gradient(var(--social-accent),transparent);opacity:.65}
+.social-discord{--social-accent:#afa1ff;--social-glow:150,133,255}
+.social-tiktok{--social-accent:#75e8df;--social-glow:80,214,207}
+.social-youtube{--social-accent:#ff5974;--social-glow:255,75,101}
+.social-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:22px 24px 4px;position:relative;z-index:1}
+.social-index{font:700 11px 'JetBrains Mono',monospace;letter-spacing:1px;color:var(--social-accent)}
+.social-index span{font-weight:500;color:#926f7b;font-size:9px;letter-spacing:.55px}
+.social-status{display:inline-flex;align-items:center;gap:6px;color:#937e88;font:600 9px 'JetBrains Mono',monospace;letter-spacing:.35px;white-space:nowrap}
+.social-status-dot{width:5px;height:5px;display:inline-block;border-radius:50%;background:var(--social-accent);box-shadow:0 0 7px var(--social-accent)}
+.social-content{position:relative;z-index:1;padding:26px 24px 18px;flex:1}
+.social-icon{position:relative;width:60px;height:60px;display:grid;place-items:center;border:1px solid rgba(var(--social-glow),.35);background:linear-gradient(140deg,rgba(var(--social-glow),.16),rgba(var(--social-glow),.03));border-radius:12px;box-shadow:0 12px 25px rgba(0,0,0,.12);transform:rotate(-2deg);transition:transform .4s ease,box-shadow .35s ease}
+.social-card:hover .social-icon{transform:rotate(0) translateY(-3px);box-shadow:0 0 28px rgba(var(--social-glow),.16)}
+.social-icon svg{width:35px;height:35px;fill:var(--social-accent)}
+.social-kicker{margin:23px 0 0;font:700 10px 'JetBrains Mono',monospace;color:var(--social-accent);letter-spacing:1.6px}
+.social-card h3{font:800 28px/1.15 'Oxanium','Chakra Petch',sans-serif;text-transform:uppercase;letter-spacing:1px;margin:8px 0 11px;color:#fff}
+.social-card p{font-size:14px;line-height:1.55;color:#ad9ca6;margin:0;max-width:280px}
+.social-bottom{min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:9px;border-top:1px solid rgba(255,255,255,.07);padding:12px 22px 13px 24px;position:relative;z-index:1;color:#eee1e6;font:700 10px 'JetBrains Mono',monospace;letter-spacing:.75px}
+.social-arrow{width:36px;height:36px;border:1px solid rgba(var(--social-glow),.38);display:grid;place-items:center;color:var(--social-accent);font:23px/1 'Chakra Petch',sans-serif;background:rgba(var(--social-glow),.06);transition:background .3s,transform .3s,color .3s}
+.social-card:hover .social-arrow{background:var(--social-accent);color:#09080c;transform:translate(2px,-2px)}
+.foot{margin-top:0}
+@media(max-width:880px){.social-cards{grid-template-columns:1fr;gap:14px}.social-card{min-height:270px}.social-content{padding-top:18px}.social-card p{max-width:100%}}
+@media(max-width:480px){.social-section{padding-bottom:52px}.social-top{padding-left:19px;padding-right:19px}.social-content{padding-left:19px;padding-right:19px}.social-bottom{padding-left:19px;padding-right:19px}.social-card{min-height:290px}.social-status{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.social-card,.social-card:after,.social-icon,.social-arrow{transition:none!important}}
+
+
+/* Navegação estável com animação suave: substitui a view-transition cross-document */
+@keyframes davix-enter {from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes davix-exit {from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-7px)}}
+body{animation:davix-enter .35s cubic-bezier(.2,.8,.2,1) both}
+body.davix-leaving{animation:davix-exit .17s ease-in both}
+@media(prefers-reduced-motion:reduce){body,body.davix-leaving{animation:none!important}}
+
 </style>
 </head>
 <body><canvas id="matrix" aria-hidden="true"></canvas>
@@ -92,14 +123,66 @@
 <div class="wrap">
 <header class="topbar"><div class="brand"><span class="brand-mark">D</span><span class="brand-title">DAVIX <strong>SCRIPTS</strong></span></div><div class="online"><span class="dot"></span>SYSTEM ONLINE</div></header>
 <main><section class="hero"><div class="hero-copy"><div class="eyebrow">&gt; BEM-VINDO À MAIOR COMUNIDADE DE SCRIPTS PARA ROBLOX DO BRASIL</div><h1>DAVIX<span class="scripts stroke">SCRIPTS</span></h1><div class="accent-line"></div><p>Entre na nossa comunidade do discord, á melhor comunidade de scripts do Brasil</p><a class="cta" href="#connect">◆ EXPLORAR A REDE <span>↗</span></a></div><div class="visual"><div class="ninja-wrap"><svg viewBox="0 0 400 440" role="img" aria-label="Ilustração de ninja futurista vermelho"><defs><linearGradient id="hood" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#451522"/><stop offset=".55" stop-color="#1a0e15"/><stop offset="1" stop-color="#7d172e"/></linearGradient><linearGradient id="mask" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#100b11"/><stop offset="1" stop-color="#4d1626"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M200 19 327 83 367 215 321 353 200 420 79 353 33 215 73 83Z" fill="#190b13" stroke="#ff3556" stroke-width="2.5"/><path d="M200 48 303 104 333 214 297 329 200 384 103 329 67 214 97 104Z" fill="url(#hood)" stroke="#a62742" stroke-width="5"/><path d="M200 82 279 128 299 218 270 298 200 344 130 298 101 218 121 128Z" fill="#08090d" stroke="#e32c4d" stroke-width="2"/><path d="M122 197 151 148 200 125 249 148 278 197 264 263 200 310 136 263Z" fill="#130e14"/><path d="M126 202 174 214 185 236 149 230Z" fill="#ff405f" filter="url(#glow)"/><path d="M274 202 226 214 215 236 251 230Z" fill="#ff405f" filter="url(#glow)"/><path d="M141 248 200 262 259 248 246 287 200 315 154 287Z" fill="url(#mask)" stroke="#8d2941" stroke-width="2"/><path d="M165 274 200 287 235 274" fill="none" stroke="#ff5470" stroke-width="2"/><path d="M91 140 61 214 94 290M309 140 339 214 306 290" stroke="#ff3658" stroke-width="2" fill="none" opacity=".8"/><path d="M200 20V0M200 420v20M33 215H8M367 215h25" stroke="#ff3758" stroke-width="2"/></svg></div></div></section>
-<a class="scripts-entry" href="scripts.html" aria-label="Abrir página de scripts Blox Fruits"><div><h2>→ SCRIPTS BLOX FRUITS</h2><p>Acesse todos os scripts para Blox Fruits</p></div><span class="go" aria-hidden="true">↗</span></a>
-<section id="connect"><h2 class="section-title"><span>01 /</span> CONNECT WITH US</h2><div class="cards">
-<a class="card" href="https://discord.gg/7Sf28AV9WZ" target="_blank" rel="noopener noreferrer" aria-label="Abrir Discord Davix Scripts"><span class="num">01 // COMMUNITY</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.7 19.7 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.6 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C.6 9 .1 13.5.5 18a19.8 19.8 0 0 0 6 3l1.3-2a12.4 12.4 0 0 1-1.9-.9l.5-.4a14 14 0 0 0 11.2 0l.5.4a12 12 0 0 1-1.9.9l1.3 2a19.7 19.7 0 0 0 6-3c.5-5.2-.8-9.6-3.2-13.6ZM8.5 15.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg><h3>DISCORD</h3><p>Entre na comunidade oficial</p></a>
-<a class="card" href="https://www.tiktok.com/@davixclawx" target="_blank" rel="noopener noreferrer" aria-label="Abrir TikTok Davix"><span class="num">02 // CONTENT</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 2c.2 2.2 1.4 3.7 3.6 3.9v3.7c-1.7 0-3.2-.5-4.5-1.5v7.4c0 4-3.2 6.5-6.7 6.5-3.7 0-6.5-2.9-6.5-6.5S5.5 9 9.1 9c.5 0 1 0 1.4.1v3.8a3 3 0 0 0-1.4-.3 2.8 2.8 0 1 0 2.8 2.8V2h4.8Z"/></svg><h3>TIKTOK</h3><p>Vídeos, novidades e atualizações</p></a>
-<a class="card" href="https://youtube.com/@davixscripts?si=pD-OG456FE-mPz7y" target="_blank" rel="noopener noreferrer" aria-label="Abrir YouTube Davix Scripts"><span class="num">03 // VIDEOS</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0 0 10 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 0-10ZM9.8 15.7V8.3l6.4 3.7-6.4 3.7Z"/></svg><h3>YOUTUBE</h3><p>Conteúdos e tutoriais exclusivos</p></a>
-</div></section>
-<section class="terminal" aria-label="Terminal decorativo"><div class="terminal-head"><span class="lights"><i></i><i></i><i></i></span> davix_network / console_preview.lua <span class="right">READ ONLY // VISUAL DEMO</span></div><div class="terminal-body"><div><div class="comment">-- DAVIX SCRIPTS // VISUAL INTERFACE</div><div><span class="keyword">local</span> network = <span class="string">"DAVIX SCRIPTS"</span></div><div><span class="keyword">local</span> status = <span class="string">"ONLINE"</span></div><div><span class="keyword">local</span> access = <span class="string">"COMMUNITY"</span></div><div><span class="keyword">print</span>(network .. <span class="string">" // "</span> .. status)</div></div><div class="status"><div class="ok">&gt; CONNECTION ESTABLISHED_</div><div>&gt; COMMUNITY CHANNELS: 03</div><div>&gt; NINJA PROTOCOL: ACTIVE</div><div>&gt; AWAITING YOUR CONNECTION<span class="ok"> █</span></div></div></div></section>
+<a class="scripts-entry" href="scripts.html" data-page-link="true" aria-label="Abrir página de scripts Blox Fruits"><div><h2>→ SCRIPTS BLOX FRUITS</h2><p>Acesse todos os scripts para Blox Fruits</p></div><span class="go" aria-hidden="true">↗</span></a>
+  <section id="connect" class="social-section" aria-labelledby="social-title">
+    <h2 class="section-title" id="social-title"><span>01 /</span> Nossas redes sociais</h2>
+    <p class="social-subtitle">Conecte-se com a Davix Scripts pelos nossos canais oficiais.</p>
+    <div class="cards social-cards">
+      <a class="card social-card social-discord" href="https://discord.gg/7Sf28AV9WZ" target="_blank" rel="noopener noreferrer" aria-label="Abrir Discord Davix Scripts">
+        <span class="card-accent-rail" aria-hidden="true"></span>
+        <div class="social-top"><span class="social-index">01 <span>// SOCIAL LINK</span></span><span class="social-status"><span class="social-status-dot"></span> LINK ATIVO</span></div>
+        <div class="social-content">
+          <div class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.7 19.7 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.6 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C.6 9 .1 13.5.5 18a19.8 19.8 0 0 0 6 3l1.3-2a12.4 12.4 0 0 1-1.9-.9l.5-.4a14 14 0 0 0 11.2 0l.5.4a12 12 0 0 1-1.9.9l1.3 2a19.7 19.7 0 0 0 6-3c.5-5.2-.8-9.6-3.2-13.6ZM8.5 15.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg></div>
+          <div class="social-kicker">COMUNIDADE</div>
+          <h3>Discord</h3>
+          <p>Seu espaço para conversar, compartilhar e acompanhar a comunidade.</p>
+        </div>
+        <div class="social-bottom"><span>ENTRAR NO SERVIDOR</span><span class="social-arrow" aria-hidden="true">↗</span></div>
+      </a>
+      <a class="card social-card social-tiktok" href="https://www.tiktok.com/@davixclawx" target="_blank" rel="noopener noreferrer" aria-label="Abrir TikTok Davix">
+        <span class="card-accent-rail" aria-hidden="true"></span>
+        <div class="social-top"><span class="social-index">02 <span>// SOCIAL LINK</span></span><span class="social-status"><span class="social-status-dot"></span> LINK ATIVO</span></div>
+        <div class="social-content">
+          <div class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 2c.2 2.2 1.4 3.7 3.6 3.9v3.7c-1.7 0-3.2-.5-4.5-1.5v7.4c0 4-3.2 6.5-6.7 6.5-3.7 0-6.5-2.9-6.5-6.5S5.5 9 9.1 9c.5 0 1 0 1.4.1v3.8a3 3 0 0 0-1.4-.3 2.8 2.8 0 1 0 2.8 2.8V2h4.8Z"/></svg></div>
+          <div class="social-kicker">VÍDEOS CURTOS</div>
+          <h3>TikTok</h3>
+          <p>Novidades, vídeos rápidos e os melhores momentos da Davix.</p>
+        </div>
+        <div class="social-bottom"><span>VER PERFIL</span><span class="social-arrow" aria-hidden="true">↗</span></div>
+      </a>
+      <a class="card social-card social-youtube" href="https://youtube.com/@davixscripts?si=pD-OG456FE-mPz7y" target="_blank" rel="noopener noreferrer" aria-label="Abrir YouTube Davix Scripts">
+        <span class="card-accent-rail" aria-hidden="true"></span>
+        <div class="social-top"><span class="social-index">03 <span>// SOCIAL LINK</span></span><span class="social-status"><span class="social-status-dot"></span> LINK ATIVO</span></div>
+        <div class="social-content">
+          <div class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7a31 31 0 0 0 0 10 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17a31 31 0 0 0 0-10ZM9.8 15.7V8.3l6.4 3.7-6.4 3.7Z"/></svg></div>
+          <div class="social-kicker">CONTEÚDO</div>
+          <h3>YouTube</h3>
+          <p>Tutoriais, novidades e conteúdos para ficar por dentro de tudo.</p>
+        </div>
+        <div class="social-bottom"><span>ASSISTIR CANAL</span><span class="social-arrow" aria-hidden="true">↗</span></div>
+      </a>
+    </div>
+  </section>
+
 </main><footer class="foot"><span>© 2026 <strong>DAVIX SCRIPTS</strong> // ALL RIGHTS RESERVED</span><span>SHADOW NETWORK • EST. 2026</span></footer></div>
 <script>
 (()=>{const canvas=document.getElementById('matrix');const ctx=canvas.getContext('2d');if(!ctx)return;let w,h,stars=[];const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;stars=Array.from({length:Math.min(95,Math.floor(w*h/14000))},()=>({x:Math.random()*w,y:Math.random()*h,v:.15+Math.random()*.5,s:Math.random()*1.4+.3}))}resize();window.addEventListener('resize',resize);function draw(){ctx.clearRect(0,0,w,h);for(const p of stars){ctx.fillStyle='rgba(255,55,90,.7)';ctx.fillRect(p.x,p.y,p.s,p.s);p.y+=p.v;if(p.y>h){p.y=0;p.x=Math.random()*w}}if(!reduced)requestAnimationFrame(draw)}draw()})();
-</script></body></html>
+</script>
+<script>
+// Transição curta sem bloquear a navegação, inclusive após voltar pelo navegador.
+(()=>{
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  window.addEventListener('pageshow',()=>document.body.classList.remove('davix-leaving'));
+  document.querySelectorAll('a[data-page-link]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+      if(reduceMotion.matches)return;
+      event.preventDefault();
+      if(document.body.classList.contains('davix-leaving'))return;
+      document.body.classList.add('davix-leaving');
+      window.setTimeout(()=>{window.location.assign(link.href)},170);
+    });
+  });
+})();
+</script>
+</body></html>
