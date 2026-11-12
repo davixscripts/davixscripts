@@ -1,0 +1,6 @@
+DAVIX NINJA: NOVAS RESPOSTAS PROGRAMADAS
+
+Novas perguntas reconhecidas: key do Delta, melhor script grátis (Quantum Hub), melhor executor PC (Real Executor), dúvidas/ticket no Discord.
+
+Para atualizar apenas o chat, substitua davix-ninja.js na raiz do repositório e clique em Commit changes.
+Este chat ainda usa respostas programadas, não IA em tempo real. As indicações de melhores opções representam preferências da Davix Scripts, sem verificação de ranking ou de segurança de softwares de terceiros.

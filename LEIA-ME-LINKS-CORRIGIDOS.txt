@@ -1,0 +1,16 @@
+DAVIX SCRIPTS — LINKS DOS EXECUTORES PC CORRIGIDOS
+
+Os três cards agora são links clicáveis, inclusive a seta e o nome.
+Real Executor: https://projectreal.gg/download/
+Madium: https://madium.net/
+Velocity: https://fgd8.short.gy/VELOCITY
+
+Instalação:
+1. Extraia o ZIP.
+2. Substitua pelo menos executores-pc.html no seu repositório GitHub.
+3. Clique em Commit changes e confirme a publicação em Actions.
+4. Abra Executores > PC e clique em um dos cards.
+
+Os endereços foram fornecidos pelo usuário, sem auditoria de segurança.
+O Velocity é um link encurtado; confirme o destino e a confiabilidade antes de acessar.
+Todos os outros arquivos, inclusive o Davix Ninja, foram preservados.
