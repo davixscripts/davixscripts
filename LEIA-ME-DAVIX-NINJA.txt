@@ -1,0 +1,23 @@
+DAVIX SCRIPTS — DAVIX NINJA (DEMONSTRAÇÃO)
+
+Este pacote mantém o site anterior, com Scripts, Blox Fruits, King Legacy, Roube Um Ovo e Executores.
+
+NOVO:
+- Botão flutuante de ninja animado nas oito páginas.
+- Chat com respostas programadas sobre páginas do site e categorias.
+- Resposta-exemplo para “Qual melhor script de Blox Fruits?” com indicação de destaque configurável.
+- Mobile leve: animações reduzidas no celular.
+
+ATENÇÃO: ISTO AINDA NÃO É UMA IA DE VERDADE.
+As perguntas são reconhecidas por palavras-chave no navegador. O chat NÃO consulta informações em tempo real nem envia mensagens a um modelo de IA. Não inventa ranking de melhores scripts.
+
+Para mudar o hub exibido como destaque, altere a constante HUB_EM_DESTAQUE no arquivo davix-ninja.js.
+
+Para criar conversas realmente livres, é necessário conectar um servidor/backend a um modelo de IA. NUNCA coloque uma chave secreta de API em HTML ou JavaScript público no GitHub Pages.
+
+INSTALAÇÃO:
+1. Extraia o ZIP.
+2. Envie todos os arquivos para a RAIZ do seu repositório no GitHub.
+3. Substitua os HTML anteriores, mantenha davix-ninja.css e davix-ninja.js na mesma pasta.
+4. Faça Commit changes, confira Actions e aguarde a publicação.
+5. Teste no celular e no computador.

@@ -66,12 +66,39 @@ a{color:inherit}
 @media(max-width:760px){.choice-grid,.grid{grid-template-columns:1fr}.choice-card{min-height:250px}}
 @media(max-width:490px){.wrap{padding:0 16px}.top{min-height:74px}.brand{font-size:18px}.brand-mark{width:32px;height:32px}.back{padding:10px;font-size:9px}.hero{padding-top:44px}.hero h1{letter-spacing:-1px}.toolbar{align-items:stretch;flex-direction:column}.choice-card{padding:24px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-@view-transition{navigation:auto}
-::view-transition-old(root){animation:.17s ease both fade-out}
-::view-transition-new(root){animation:.26s ease both fade-in}
+
+
+
 @keyframes fade-out{to{opacity:0;transform:translateY(-5px)}}
 @keyframes fade-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-</style></head><body>
+
+/* DAVIX / MOBILE PERFORMANCE MODE */
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  html { scroll-behavior: auto; background: #17050c; }
+  body {
+    background: linear-gradient(155deg, #310816 0%, #17050c 46%, #290914 100%) !important;
+    background-attachment: scroll !important;
+    animation: none !important;
+    min-height: 100svh;
+  }
+  body::before, body::after { display: none !important; }
+  *, *::before, *::after { animation: none !important; }
+  .choice-card, .game {
+    box-shadow: none !important;
+    transition: border-color .16s ease !important;
+  }
+  .choice-card:hover, .game:hover { transform: none !important; }
+  .choice-card:active { border-color: #ff708a !important; }
+  .choice-card:focus-visible, .back:focus-visible, .copy-btn:focus-visible {
+    outline: 2px solid #ff8197;
+    outline-offset: 3px;
+  }
+  .codebox pre { overflow-wrap: anywhere; }
+}
+
+</style><link rel="stylesheet" href="davix-ninja.css">
+<script src="davix-ninja.js" defer></script>
+</head><body>
 <div class="wrap"><header class="top"><a href="index.html" class="brand"><span class="brand-mark">D</span><span>DAVIX <strong>SCRIPTS</strong></span></a><a href="executores.html" class="back">← VOLTAR</a></header>
 <nav class="crumbs" aria-label="Navegação"><a href="index.html">Início</a> <span class="sep">/</span> <a href="executores.html">Executores</a> <span class="sep">/</span> <strong>Mobile</strong></nav>
 <main><section class="hero"><div class="eyebrow">&gt; DAVIX SCRIPTS // CATÁLOGO</div><h1>Executores <em>Mobile</em></h1><p>Opções para dispositivos móveis.</p></section><div class="section-mark">EXECUTORES CADASTRADOS</div><div class="grid"><article class="game"><div class="game-top"><span class="num">01 // MOBILE</span><span class="game-glyph" aria-hidden="true">⌘</span></div><h2>Delta</h2><p>Executor listado no catálogo Davix Scripts para dispositivos móveis.</p><div class="choice-bottom">MOBILE <b aria-hidden="true">↗</b></div></article><article class="game"><div class="game-top"><span class="num">02 // MOBILE</span><span class="game-glyph" aria-hidden="true">⌘</span></div><h2>Arceus</h2><p>Executor listado no catálogo Davix Scripts para dispositivos móveis.</p><div class="choice-bottom">MOBILE <b aria-hidden="true">↗</b></div></article></div><p class="info-note">Esta página apresenta nomes de executores, sem links de download. Softwares de terceiros podem oferecer riscos à segurança e à conta; verifique a procedência.</p></main>

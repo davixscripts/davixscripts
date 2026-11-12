@@ -66,12 +66,39 @@ a{color:inherit}
 @media(max-width:760px){.choice-grid,.grid{grid-template-columns:1fr}.choice-card{min-height:250px}}
 @media(max-width:490px){.wrap{padding:0 16px}.top{min-height:74px}.brand{font-size:18px}.brand-mark{width:32px;height:32px}.back{padding:10px;font-size:9px}.hero{padding-top:44px}.hero h1{letter-spacing:-1px}.toolbar{align-items:stretch;flex-direction:column}.choice-card{padding:24px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-@view-transition{navigation:auto}
-::view-transition-old(root){animation:.17s ease both fade-out}
-::view-transition-new(root){animation:.26s ease both fade-in}
+
+
+
 @keyframes fade-out{to{opacity:0;transform:translateY(-5px)}}
 @keyframes fade-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-</style></head><body>
+
+/* DAVIX / MOBILE PERFORMANCE MODE */
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  html { scroll-behavior: auto; background: #17050c; }
+  body {
+    background: linear-gradient(155deg, #310816 0%, #17050c 46%, #290914 100%) !important;
+    background-attachment: scroll !important;
+    animation: none !important;
+    min-height: 100svh;
+  }
+  body::before, body::after { display: none !important; }
+  *, *::before, *::after { animation: none !important; }
+  .choice-card, .game {
+    box-shadow: none !important;
+    transition: border-color .16s ease !important;
+  }
+  .choice-card:hover, .game:hover { transform: none !important; }
+  .choice-card:active { border-color: #ff708a !important; }
+  .choice-card:focus-visible, .back:focus-visible, .copy-btn:focus-visible {
+    outline: 2px solid #ff8197;
+    outline-offset: 3px;
+  }
+  .codebox pre { overflow-wrap: anywhere; }
+}
+
+</style><link rel="stylesheet" href="davix-ninja.css">
+<script src="davix-ninja.js" defer></script>
+</head><body>
 <div class="wrap"><header class="top"><a href="index.html" class="brand"><span class="brand-mark">D</span><span>DAVIX <strong>SCRIPTS</strong></span></a><a href="scripts.html" class="back">← VOLTAR</a></header>
 <nav class="crumbs" aria-label="Navegação"><a href="index.html">Início</a> <span class="sep">/</span> <a href="scripts.html">Scripts</a> <span class="sep">/</span> <strong>King Legacy</strong></nav>
 <main><section class="hero"><div class="eyebrow">&gt; DAVIX SCRIPTS // CATÁLOGO</div><h1>Scripts <em>King Legacy</em></h1><p>Confira os três hubs para King Legacy e copie os comandos diretamente na página.</p></section><div class="toolbar"><input class="search" id="search" type="search" placeholder="Pesquisar scripts..." aria-label="Pesquisar scripts"><span id="count" class="count">03 SCRIPTS</span></div><div class="grid"><article class="game" data-name="Vector Hub"><div class="game-top"><span class="num">01 // SCRIPT</span><span class="game-glyph" aria-hidden="true">↗</span></div><h2>Vector Hub</h2><p>Copie o código abaixo diretamente no site.</p><div class="codebox"><pre>loadstring(game:HttpGet(&quot;https://raw.githubusercontent.com/duymanhm6-cyber/wukonghud/refs/heads/main/wukonghud&quot;))()</pre></div><div class="actions"><button class="copy-btn" type="button">COPIAR SCRIPT</button><span class="copy-status" role="status" aria-live="polite"></span></div></article><article class="game" data-name="Tsuo Hub"><div class="game-top"><span class="num">02 // SCRIPT</span><span class="game-glyph" aria-hidden="true">↗</span></div><h2>Tsuo Hub</h2><p>Copie o código abaixo diretamente no site.</p><div class="codebox"><pre>loadstring(game:HttpGet(&quot;https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/king%20legacy&quot;))()</pre></div><div class="actions"><button class="copy-btn" type="button">COPIAR SCRIPT</button><span class="copy-status" role="status" aria-live="polite"></span></div></article><article class="game" data-name="Hulk Hub"><div class="game-top"><span class="num">03 // SCRIPT</span><span class="game-glyph" aria-hidden="true">↗</span></div><h2>Hulk Hub</h2><p>Copie o código abaixo diretamente no site.</p><div class="codebox"><pre>loadstring(game:HttpGet(&quot;https://raw.githubusercontent.com/HULKUexe/mobileX/main/FreeScript.lua&quot;))()</pre></div><div class="actions"><button class="copy-btn" type="button">COPIAR SCRIPT</button><span class="copy-status" role="status" aria-live="polite"></span></div></article></div><p class="empty" id="empty" hidden>Nenhum script encontrado.</p><p class="info-note">Códigos de terceiros fornecidos como referência. Verifique a procedência antes de executar qualquer script.</p></main>

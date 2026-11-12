@@ -1,0 +1,37 @@
+/* DAVIX NINJA — janela de chat leve e acessível, compatível com GitHub Pages */
+:root{--dn-red:#ff375b;--dn-pink:#ff8199;--dn-dark:#10070e}
+#davix-ninja-app{position:fixed;right:clamp(12px,2.6vw,34px);bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:9000;font-family:'Chakra Petch',Arial,sans-serif;color:#fff;pointer-events:none}
+#davix-ninja-app *{box-sizing:border-box}
+#davix-ninja-app button,#davix-ninja-app a,#davix-ninja-app input{font:inherit}
+#davix-ninja-app button{cursor:pointer}
+#davix-ninja-app button:focus-visible,#davix-ninja-app a:focus-visible,#davix-ninja-app input:focus-visible{outline:2px solid #ffa2b6;outline-offset:2px}
+.dn-launcher{position:relative;width:76px;height:80px;display:flex;align-items:center;justify-content:center;pointer-events:auto;margin-left:auto;padding:0;border:1px solid #ff6280;background:linear-gradient(150deg,#65142f,#200910);border-radius:22px 22px 13px 13px;box-shadow:0 12px 34px rgba(0,0,0,.4),0 0 21px rgba(255,46,81,.19);transition:transform .18s,border-color .18s}
+.dn-launcher:hover{transform:translateY(-3px);border-color:#ff9db0}
+.dn-launcher .dn-ninja{width:63px;height:63px}
+.dn-launcher-badge{position:absolute;top:-9px;right:-8px;background:#ff3356;color:#fff;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.65px;padding:4px 6px;border-radius:12px;white-space:nowrap}
+.dn-ninja{display:block;flex:none;overflow:visible;filter:drop-shadow(0 3px 6px rgba(0,0,0,.25))}
+.dn-eye{transform-origin:center;animation:dn-blink 7s ease-in-out infinite}
+@keyframes dn-blink{0%,44%,46%,100%{transform:scaleY(1)}45%{transform:scaleY(.10)}}
+.dn-panel{position:absolute;right:0;bottom:91px;width:min(388px,calc(100vw - 24px));height:min(555px,calc(100vh - 120px));height:min(555px,calc(100dvh - 120px));display:flex;flex-direction:column;pointer-events:auto;background:linear-gradient(155deg,#26101b,#10080f 58%,#12080f);border:1px solid rgba(255,101,129,.63);border-radius:17px;overflow:hidden;box-shadow:0 20px 68px #000b,0 0 35px #ff355721;animation:dn-open .19s ease-out both}
+@keyframes dn-open{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+.dn-panel[hidden]{display:none!important}
+.dn-head{display:flex;gap:12px;align-items:center;padding:15px 15px 13px;background:linear-gradient(90deg,#58142d,#260a19);border-bottom:1px solid rgba(255,104,131,.35)}
+.dn-head .dn-ninja{width:44px;height:44px}
+.dn-heading{min-width:0;flex:1}.dn-heading strong{display:block;font:800 18px 'Oxanium','Chakra Petch',Arial,sans-serif;letter-spacing:1.1px}.dn-heading small{display:block;color:#ffb2c0;font:10px 'JetBrains Mono',monospace;margin-top:3px}
+.dn-close{width:32px;height:32px;display:grid;place-items:center;border:1px solid rgba(255,159,177,.25);border-radius:9px;background:#ffffff0b;color:#fff;font-size:22px!important}
+.dn-messages{padding:17px 15px 13px;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin;scrollbar-color:#813047 transparent}
+.dn-bubble{max-width:95%;border:1px solid rgba(255,107,134,.21);padding:11px 12px;border-radius:13px 13px 13px 3px;background:#2b1320;font-size:13.5px;line-height:1.55;color:#f8ebee;overflow-wrap:anywhere}
+.dn-bubble.dn-user{align-self:flex-end;max-width:87%;background:#6a1836;border-color:#bc395c;border-radius:13px 13px 3px 13px}
+.dn-message-tag{display:block;color:#ff829a;font:700 9px 'JetBrains Mono',monospace;letter-spacing:.75px;margin-bottom:5px}
+.dn-user .dn-message-tag{color:#ffb9c7}
+.dn-bubble a{color:#ffc3d0;text-underline-offset:3px;font-weight:700}
+.dn-quick{display:flex;flex-wrap:wrap;gap:7px;padding:0 12px 11px}
+.dn-quick button{border:1px solid rgba(255,99,130,.43);color:#ffc9d3;background:#351420;border-radius:999px;padding:7px 10px;font-size:11px;line-height:1.2;transition:background .16s}
+.dn-quick button:hover{background:#672039}
+.dn-form{padding:10px 12px 13px;border-top:1px solid rgba(255,106,132,.22);display:flex;gap:8px;background:#140912}
+.dn-form input{min-width:0;flex:1;border:1px solid rgba(255,104,131,.35);border-radius:10px;background:#0b060b;color:#fff;padding:11px 12px;font-size:13px;outline:none}
+.dn-form input::placeholder{color:#a98d99}
+.dn-form button{border:0;border-radius:10px;background:linear-gradient(120deg,#d91c46,#ff4265);color:#fff;padding:10px 13px;font-weight:700;font-size:12px}
+.dn-note{padding:0 12px 11px;color:#b89da7;background:#140912;text-align:center;font:10px 'JetBrains Mono',monospace}
+@media(max-width:600px){#davix-ninja-app{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px))}.dn-launcher{width:62px;height:65px;border-radius:18px}.dn-launcher .dn-ninja{width:53px;height:53px}.dn-panel{bottom:75px;height:min(500px,calc(100vh - 108px));height:min(500px,calc(100dvh - 108px));width:calc(100vw - 24px);max-width:390px}.dn-bubble{font-size:13px}.dn-quick button{font-size:10.5px}}
+@media(prefers-reduced-motion:reduce),(hover:none) and (pointer:coarse){.dn-eye{animation:none}.dn-panel{animation:none}.dn-launcher,.dn-quick button{transition:none}.dn-launcher:hover{transform:none}}

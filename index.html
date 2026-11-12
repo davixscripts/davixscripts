@@ -154,13 +154,67 @@ body::after { opacity:.10; }
 .portal-card:hover .portal-foot b{transform:translate(3px,-3px)}
 @media(max-width:680px){.portal-grid{grid-template-columns:1fr}.portal-card{min-height:260px}.portal-section{padding-bottom:44px}}
 @media(prefers-reduced-motion:reduce){.portal-card,.portal-foot b{transition:none!important}}
-@view-transition{navigation:auto}
-::view-transition-old(root){animation:.17s ease both fade-out}
-::view-transition-new(root){animation:.26s ease both fade-in}
+
+
+
 @keyframes fade-out{to{opacity:0;transform:translateY(-5px)}}
 @keyframes fade-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 
+
+/* DAVIX / MOBILE PERFORMANCE MODE
+   Mantem o visual vermelho sem efeitos caros de renderizacao no celular. */
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  html { scroll-behavior: auto; background: #17050c; }
+  body {
+    background: linear-gradient(155deg, #310816 0%, #17050c 44%, #290914 100%) !important;
+    background-attachment: scroll !important;
+    animation: none !important;
+    min-height: 100svh;
+  }
+  body::before, body::after { display: none !important; }
+  #matrix { display: none !important; }
+  .wrap { isolation: isolate; }
+  /* Elimina animacoes constantes e fades custosos no celular. */
+  *, *::before, *::after { animation: none !important; }
+  .visual::before, .visual::after { animation: none !important; }
+  .ninja-wrap, .brand-mark { filter: none !important; }
+  .ninja-wrap { transform: none !important; }
+  .visual { contain: layout style; }
+  .hero-copy, .visual, .cards { opacity: 1 !important; transform: none !important; }
+  .social-card, .portal-card, .scripts-entry,
+  .social-icon, .social-arrow, .portal-foot b, .card {
+    box-shadow: none !important;
+    transition: border-color .16s ease, background-color .16s ease !important;
+  }
+  .social-card:hover, .portal-card:hover, .scripts-entry:hover,
+  .social-icon, .social-card:hover .social-icon,
+  .card:hover, .social-card:hover .social-arrow,
+  .portal-card:hover .portal-foot b { transform: none !important; }
+  .social-card::after, .portal-card::after { display: none !important; }
+  .social-card::before, .portal-card::before { box-shadow: none !important; }
+  .social-status-dot, .accent-line { box-shadow: none !important; }
+  .hero h1 { text-shadow: none !important; }
+  .hero h1 .stroke { text-shadow: none !important; }
+  .cta { box-shadow: none !important; }
+  .cta:hover { transform: none !important; box-shadow: none !important; }
+  .social-card:active, .portal-card:active, .scripts-entry:active { border-color: #ff708a !important; }
+  .social-card:focus-visible, .portal-card:focus-visible, .scripts-entry:focus-visible { outline: 2px solid #ff8197; outline-offset: 3px; }
+  /* Preserva a decoracao do ninja, porem estatica. */
+  .visual::before, .visual::after { opacity: .60; }
+  .foot { gap: 10px; }
+}
+@media (max-width: 400px) {
+  .hero h1 { font-size: clamp(53px, 15vw, 65px); }
+  .hero { padding-top: 40px; }
+  .visual { min-height: 285px; }
+  .ninja-wrap { width: min(245px, 75vw); }
+  .portal-card { padding: 23px 20px; }
+  .social-card { min-height: 260px; }
+}
+
 </style>
+<link rel="stylesheet" href="davix-ninja.css">
+<script src="davix-ninja.js" defer></script>
 </head>
 <body><canvas id="matrix" aria-hidden="true"></canvas>
 <div class="wrap">
@@ -228,7 +282,48 @@ body::after { opacity:.10; }
 
 </main><footer class="foot"><span>© 2026 <strong>DAVIX SCRIPTS</strong> // ALL RIGHTS RESERVED</span><span>COMUNIDADE ROBLOX • DESDE 2026</span></footer></div>
 <script>
-(()=>{const canvas=document.getElementById('matrix');const ctx=canvas.getContext('2d');if(!ctx)return;let w,h,stars=[];const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;stars=Array.from({length:Math.min(95,Math.floor(w*h/14000))},()=>({x:Math.random()*w,y:Math.random()*h,v:.15+Math.random()*.5,s:Math.random()*1.4+.3}))}resize();window.addEventListener('resize',resize);function draw(){ctx.clearRect(0,0,w,h);for(const p of stars){ctx.fillStyle='rgba(255,55,90,.7)';ctx.fillRect(p.x,p.y,p.s,p.s);p.y+=p.v;if(p.y>h){p.y=0;p.x=Math.random()*w}}if(!reduced)requestAnimationFrame(draw)}draw()})();
+(()=>{
+ const canvas=document.getElementById('matrix');
+ if(!canvas)return;
+ const lite=window.matchMedia('(max-width: 900px), (hover: none) and (pointer: coarse)');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ if(lite.matches||reduced.matches){canvas.remove();return;}
+ const ctx=canvas.getContext('2d',{alpha:true});
+ if(!ctx)return;
+ let w=0,h=0,stars=[],frame=0,last=0;
+ const interval=1000/30; // No maximo 30 FPS no computador.
+ function resize(){
+   w=window.innerWidth;h=window.innerHeight;
+   const dpr=Math.min(window.devicePixelRatio||1,1.5);
+   canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+   ctx.setTransform(dpr,0,0,dpr,0,0);
+   stars=Array.from({length:Math.min(50,Math.floor(w*h/29000))},()=>({
+     x:Math.random()*w,y:Math.random()*h,v:.2+Math.random()*.35,s:.4+Math.random()*.8
+   }));
+ }
+ function draw(time){
+   frame=0;
+   if(document.hidden||lite.matches)return;
+   if(time-last>=interval){
+     last=time;
+     ctx.clearRect(0,0,w,h);
+     ctx.fillStyle='rgba(255,55,90,.58)';
+     for(const star of stars){
+       ctx.fillRect(star.x,star.y,star.s,star.s);
+       star.y+=star.v;
+       if(star.y>h){star.y=0;star.x=Math.random()*w;}
+     }
+   }
+   frame=requestAnimationFrame(draw);
+ }
+ function resume(){if(!frame&&!document.hidden&&!lite.matches){last=0;frame=requestAnimationFrame(draw);}}
+ function stop(){if(frame){cancelAnimationFrame(frame);frame=0;}}
+ resize();
+ window.addEventListener('resize',()=>{if(!lite.matches)resize();},{passive:true});
+ document.addEventListener('visibilitychange',()=>{document.hidden?stop():resume();});
+ lite.addEventListener('change',()=>{lite.matches?stop():(resize(),resume());});
+ resume();
+})();
 </script>
 
 </body></html>

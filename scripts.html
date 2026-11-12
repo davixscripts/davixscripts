@@ -66,15 +66,42 @@ a{color:inherit}
 @media(max-width:760px){.choice-grid,.grid{grid-template-columns:1fr}.choice-card{min-height:250px}}
 @media(max-width:490px){.wrap{padding:0 16px}.top{min-height:74px}.brand{font-size:18px}.brand-mark{width:32px;height:32px}.back{padding:10px;font-size:9px}.hero{padding-top:44px}.hero h1{letter-spacing:-1px}.toolbar{align-items:stretch;flex-direction:column}.choice-card{padding:24px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-@view-transition{navigation:auto}
-::view-transition-old(root){animation:.17s ease both fade-out}
-::view-transition-new(root){animation:.26s ease both fade-in}
+
+
+
 @keyframes fade-out{to{opacity:0;transform:translateY(-5px)}}
 @keyframes fade-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-</style></head><body>
+
+/* DAVIX / MOBILE PERFORMANCE MODE */
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  html { scroll-behavior: auto; background: #17050c; }
+  body {
+    background: linear-gradient(155deg, #310816 0%, #17050c 46%, #290914 100%) !important;
+    background-attachment: scroll !important;
+    animation: none !important;
+    min-height: 100svh;
+  }
+  body::before, body::after { display: none !important; }
+  *, *::before, *::after { animation: none !important; }
+  .choice-card, .game {
+    box-shadow: none !important;
+    transition: border-color .16s ease !important;
+  }
+  .choice-card:hover, .game:hover { transform: none !important; }
+  .choice-card:active { border-color: #ff708a !important; }
+  .choice-card:focus-visible, .back:focus-visible, .copy-btn:focus-visible {
+    outline: 2px solid #ff8197;
+    outline-offset: 3px;
+  }
+  .codebox pre { overflow-wrap: anywhere; }
+}
+
+</style><link rel="stylesheet" href="davix-ninja.css">
+<script src="davix-ninja.js" defer></script>
+</head><body>
 <div class="wrap"><header class="top"><a href="index.html" class="brand"><span class="brand-mark">D</span><span>DAVIX <strong>SCRIPTS</strong></span></a><a href="index.html" class="back">← VOLTAR</a></header>
 <nav class="crumbs" aria-label="Navegação"><a href="index.html">Início</a> <span class="sep">/</span> <strong>Scripts</strong></nav>
 <main><section class="hero"><div class="eyebrow">&gt; DAVIX SCRIPTS // CATÁLOGO</div><h1>Escolha o <em>Jogo</em></h1><p>Selecione o jogo para ver os hubs disponíveis e copiar os scripts diretamente do site.</p></section><div class="section-mark">JOGOS DISPONÍVEIS</div>
-<div class="choice-grid"><a class="choice-card" href="blox-fruits.html"><span class="choice-number">01 // CATEGORIA</span><span class="choice-glyph" aria-hidden="true">01</span><h2>Blox Fruits</h2><p>7 hubs já cadastrados: Gravity, Draco, Quantum, Esmerald, Hermanos, Night e TSUO.</p><span class="choice-bottom">VER 07 SCRIPTS <b aria-hidden="true">↗</b></span></a><a class="choice-card" href="king-legacy.html"><span class="choice-number">02 // CATEGORIA</span><span class="choice-glyph" aria-hidden="true">02</span><h2>King Legacy</h2><p>3 hubs cadastrados: Vector, Tsuo e Hulk.</p><span class="choice-bottom">VER 03 SCRIPTS <b aria-hidden="true">↗</b></span></a></div></main>
+<div class="choice-grid"><a class="choice-card" href="blox-fruits.html"><span class="choice-number">01 // CATEGORIA</span><span class="choice-glyph" aria-hidden="true">01</span><h2>Blox Fruits</h2><p>7 hubs já cadastrados: Gravity, Draco, Quantum, Esmerald, Hermanos, Night e TSUO.</p><span class="choice-bottom">VER 07 SCRIPTS <b aria-hidden="true">↗</b></span></a><a class="choice-card" href="king-legacy.html"><span class="choice-number">02 // CATEGORIA</span><span class="choice-glyph" aria-hidden="true">02</span><h2>King Legacy</h2><p>3 hubs cadastrados: Vector, Tsuo e Hulk.</p><span class="choice-bottom">VER 03 SCRIPTS <b aria-hidden="true">↗</b></span></a><a class="choice-card" href="roube-um-ovo.html"><span class="choice-number">03 // CATEGORIA</span><span class="choice-glyph" aria-hidden="true">03</span><h2>Roube Um Ovo</h2><p>3 hubs cadastrados: Lennon, BK e Tsuo.</p><span class="choice-bottom">VER 03 SCRIPTS <b aria-hidden="true">↗</b></span></a></div></main>
 <footer class="footer"><span>© 2026 <strong>DAVIX SCRIPTS</strong></span><span>COMUNIDADE ROBLOX</span></footer></div>
 </body></html>
