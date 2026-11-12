@@ -1,24 +1,22 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#09070b">
-<meta name="description" content="Scripts para Blox Fruits, hubs e comunidade Roblox. Conheça o Davix Scripts e participe do nosso Discord.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#27050f">
+<meta name="description" content="Davix Scripts — scripts para Blox Fruits, hubs e comunidade Roblox.">
 <title>DAVIX SCRIPTS | Scripts Blox Fruits e Comunidade</title>
-<!-- Prévia do site ao compartilhar o link no Discord e em redes sociais -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Davix Scripts">
 <meta property="og:url" content="https://davixscripts.github.io/davixscripts/">
 <meta property="og:title" content="DAVIX SCRIPTS | Scripts Blox Fruits e Comunidade">
-<meta property="og:description" content="Explore scripts de Blox Fruits, descubra hubs e participe da nossa comunidade no Discord!">
+<meta property="og:description" content="Explore scripts para Blox Fruits e participe da comunidade Davix Scripts!">
 <meta property="og:image" content="https://davixscripts.github.io/davixscripts/davix-embed.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="960">
 <meta property="og:image:height" content="540">
-<meta property="og:image:alt" content="Banner vermelho Davix Scripts com personagem de anime e logo Davix Scripts">
+<meta property="og:image:alt" content="Banner Davix Scripts com tema vermelho">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DAVIX SCRIPTS | Scripts Blox Fruits e Comunidade">
-<meta name="twitter:description" content="Explore scripts de Blox Fruits, descubra hubs e participe da nossa comunidade no Discord!">
+<meta name="twitter:title" content="DAVIX SCRIPTS | Scripts Blox Fruits">
 <meta name="twitter:image" content="https://davixscripts.github.io/davixscripts/davix-embed.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,26 +32,8 @@
 .brand-title strong{font-weight:800;color:#ff4567;letter-spacing:1.4px}
 .brand-mark{font-family:'Oxanium','Chakra Petch',sans-serif;font-size:22px;font-weight:800}
 .wrap{position:relative;z-index:1}
-.edge-ui{position:fixed;top:calc(50% - 165px);width:190px;z-index:0;pointer-events:none;color:#fbd6df;font-family:'JetBrains Mono',monospace;opacity:.92;animation:edge-in 1.4s ease both}
-.edge-left{left:16px}.edge-right{right:16px;animation-delay:.18s}
-.edge-corner,.edge-footer-mark{font-size:9px;letter-spacing:2px;color:#bc6277;padding:10px 4px;border-left:1px solid #ff37504f}
-.edge-footer-mark{border-left:0;border-right:1px solid #ff37504f;text-align:right;color:#824255}
-.edge-window{background:linear-gradient(145deg,rgba(42,14,27,.95),rgba(13,10,17,.96));border:1px solid #ff365b75;box-shadow:0 18px 58px #0009,inset 0 0 30px #ff35570b;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);overflow:hidden}
-.edge-window-head{height:32px;border-bottom:1px solid #ff365b45;display:flex;align-items:center;gap:10px;padding:0 9px;font-size:8px;letter-spacing:.5px;color:#dc889d;background:#2b121c}
-.edge-lights{display:flex;gap:3px;align-items:center}.edge-lights i{width:5px;height:5px;background:#fa365b;display:block;border-radius:50%;opacity:.95}.edge-lights i:nth-child(2){opacity:.55}.edge-lights i:nth-child(3){opacity:.28}
-.edge-head-mark{margin-left:auto;font-size:15px;color:#ff5372}
-.edge-window-content{padding:14px 10px 14px}
-.edge-logo{font-family:'Oxanium','JetBrains Mono',monospace;font-size:35px;line-height:1;color:#ff496b;font-weight:800;text-shadow:0 0 20px #ff355755;margin-bottom:4px}
-.edge-logo-secondary{font-size:34px;letter-spacing:-4px}
-.edge-label{font-size:8px;font-weight:700;letter-spacing:1.8px;color:#fdcbd5;margin-bottom:13px}
-.edge-editor{font-size:8.3px;line-height:2.1;white-space:nowrap;color:#bfa6b0;padding:9px 5px;background:rgba(0,0,0,.35);border:1px solid #ff365b30}
-.edge-ln{color:#87505d;margin-right:1px}.edge-token{color:#ff5e7c}.edge-value{color:#ffcaac}.edge-caret{color:#ff4268;animation:blink 1s steps(2,start) infinite}
-.edge-meter{display:flex;gap:4px;padding:14px 0 0}.edge-meter span{height:4px;flex:1;background:#fb3355;opacity:.75}.edge-meter span:nth-child(5){opacity:.42}.edge-meter span:nth-child(n+6){opacity:.2}
-@keyframes blink{to{opacity:0}}@keyframes edge-in{from{opacity:0;transform:translateY(18px)}to{opacity:.92;transform:translateY(0)}}
-@media(max-width:1600px){.edge-ui{width:148px}.edge-left{left:8px}.edge-right{right:8px}.edge-window-content{padding:11px 7px}.edge-editor{font-size:6.7px}.edge-label{font-size:7px}.edge-logo{font-size:30px}}
-@media(max-width:1490px){.edge-ui{display:none}}
 @media(max-width:780px){.brand-title{font-size:18px;letter-spacing:.7px}.brand-title strong{letter-spacing:.4px}}
-@media(prefers-reduced-motion:reduce){.edge-ui,.edge-caret{animation:none!important}}
+
 
 
 /* DAVIX SOCIAL // Redes sociais — edição neon editorial */
@@ -107,35 +87,55 @@ body{animation:davix-enter .35s cubic-bezier(.2,.8,.2,1) both}
 body.davix-leaving{animation:davix-exit .17s ease-in both}
 @media(prefers-reduced-motion:reduce){body,body.davix-leaving{animation:none!important}}
 
+
+/* DAVIX // RED AURA — fundo vermelho moderno, sem consoles laterais */
+html { background: #170309; }
+body {
+  background:
+    radial-gradient(ellipse 950px 690px at 78% 19%, rgba(247,25,63,.30) 0%, rgba(155,10,38,.15) 48%, transparent 80%),
+    radial-gradient(ellipse 680px 610px at 7% 42%, rgba(209,21,52,.23) 0%, transparent 75%),
+    radial-gradient(ellipse 970px 630px at 55% 95%, rgba(180,10,44,.28) 0%, transparent 75%),
+    linear-gradient(130deg, #21050f 0%, #11050a 36%, #260610 69%, #19040c 100%);
+  background-attachment: fixed;
+}
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.73;
+  background:
+    repeating-linear-gradient(122deg,
+      transparent 0 133px,
+      rgba(255,75,100,.025) 134px 136px,
+      transparent 137px 270px),
+    radial-gradient(circle at 77% 23%, transparent 0 230px, rgba(255,55,86,.075) 231px 232px, transparent 233px 100%);
+}
+body::after { opacity:.10; }
+#matrix { z-index:0; opacity:.16; }
+.wrap { position:relative; z-index:1; }
+.topbar { border-bottom-color:rgba(255,93,117,.30); }
+.scripts-entry {
+  background:linear-gradient(105deg,rgba(98,14,35,.91),rgba(43,8,22,.94) 58%,rgba(31,7,16,.97));
+  border-color:rgba(255,84,109,.60);
+  box-shadow:0 16px 70px rgba(67,4,19,.28), inset 0 1px rgba(255,130,144,.07);
+}
+.scripts-entry:hover { box-shadow:0 17px 60px rgba(255,25,64,.25); }
+.social-card {
+  background:
+    radial-gradient(circle at 95% 0%, rgba(var(--social-glow),.12), transparent 57%),
+    linear-gradient(155deg,rgba(54,10,24,.96),rgba(18,7,15,.98));
+  border-color:rgba(255,90,117,.28);
+}
+.foot { border-top-color:rgba(255,93,117,.29); }
+@media(prefers-reduced-motion:reduce) {
+  .scripts-entry,.social-card { transition:none !important; }
+}
+
 </style>
 </head>
 <body><canvas id="matrix" aria-hidden="true"></canvas>
-<div class="edge-ui edge-left" aria-hidden="true">
-  <div class="edge-corner">01 / CONSOLE</div>
-  <div class="edge-window">
-    <div class="edge-window-head"><span class="edge-lights"><i></i><i></i><i></i></span><span>EXECUTOR UI</span><span class="edge-head-mark">◇</span></div>
-    <div class="edge-window-content">
-      <div class="edge-logo">&lt;/&gt;</div>
-      <div class="edge-label">SCRIPT PANEL</div>
-      <div class="edge-editor"><span class="edge-ln">01</span> <span class="edge-token">local</span> davix = <span class="edge-value">"online"</span><br><span class="edge-ln">02</span> <span class="edge-token">print</span>(davix)<br><span class="edge-ln">03</span> <span class="edge-caret">▌</span></div>
-      <div class="edge-meter"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    </div>
-  </div>
-  <div class="edge-footer-mark">DAVIX / INTERFACE 01</div>
-</div>
-<div class="edge-ui edge-right" aria-hidden="true">
-  <div class="edge-corner">02 / EXECUTOR</div>
-  <div class="edge-window">
-    <div class="edge-window-head"><span class="edge-lights"><i></i><i></i><i></i></span><span>CODE VIEW</span><span class="edge-head-mark">◇</span></div>
-    <div class="edge-window-content">
-      <div class="edge-logo edge-logo-secondary">{ }</div>
-      <div class="edge-label">SHADOW EDITOR</div>
-      <div class="edge-editor"><span class="edge-ln">01</span> <span class="edge-token">function</span> start()<br><span class="edge-ln">02</span> &nbsp; <span class="edge-token">return</span> <span class="edge-value">"DAVIX"</span><br><span class="edge-ln">03</span> <span class="edge-token">end</span><span class="edge-caret">▌</span></div>
-      <div class="edge-meter"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    </div>
-  </div>
-  <div class="edge-footer-mark">DAVIX / INTERFACE 02</div>
-</div>
 <div class="wrap">
 <header class="topbar"><div class="brand"><span class="brand-mark">D</span><span class="brand-title">DAVIX <strong>SCRIPTS</strong></span></div><div class="online"><span class="dot"></span>SYSTEM ONLINE</div></header>
 <main><section class="hero"><div class="hero-copy"><div class="eyebrow">&gt; BEM-VINDO À MAIOR COMUNIDADE DE SCRIPTS PARA ROBLOX DO BRASIL</div><h1>DAVIX<span class="scripts stroke">SCRIPTS</span></h1><div class="accent-line"></div><p>Entre na nossa comunidade do discord, á melhor comunidade de scripts do Brasil</p><a class="cta" href="#connect">◆ EXPLORAR A REDE <span>↗</span></a></div><div class="visual"><div class="ninja-wrap"><svg viewBox="0 0 400 440" role="img" aria-label="Ilustração de ninja futurista vermelho"><defs><linearGradient id="hood" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#451522"/><stop offset=".55" stop-color="#1a0e15"/><stop offset="1" stop-color="#7d172e"/></linearGradient><linearGradient id="mask" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#100b11"/><stop offset="1" stop-color="#4d1626"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M200 19 327 83 367 215 321 353 200 420 79 353 33 215 73 83Z" fill="#190b13" stroke="#ff3556" stroke-width="2.5"/><path d="M200 48 303 104 333 214 297 329 200 384 103 329 67 214 97 104Z" fill="url(#hood)" stroke="#a62742" stroke-width="5"/><path d="M200 82 279 128 299 218 270 298 200 344 130 298 101 218 121 128Z" fill="#08090d" stroke="#e32c4d" stroke-width="2"/><path d="M122 197 151 148 200 125 249 148 278 197 264 263 200 310 136 263Z" fill="#130e14"/><path d="M126 202 174 214 185 236 149 230Z" fill="#ff405f" filter="url(#glow)"/><path d="M274 202 226 214 215 236 251 230Z" fill="#ff405f" filter="url(#glow)"/><path d="M141 248 200 262 259 248 246 287 200 315 154 287Z" fill="url(#mask)" stroke="#8d2941" stroke-width="2"/><path d="M165 274 200 287 235 274" fill="none" stroke="#ff5470" stroke-width="2"/><path d="M91 140 61 214 94 290M309 140 339 214 306 290" stroke="#ff3658" stroke-width="2" fill="none" opacity=".8"/><path d="M200 20V0M200 420v20M33 215H8M367 215h25" stroke="#ff3758" stroke-width="2"/></svg></div></div></section>
@@ -180,7 +180,7 @@ body.davix-leaving{animation:davix-exit .17s ease-in both}
     </div>
   </section>
 
-</main><footer class="foot"><span>© 2026 <strong>DAVIX SCRIPTS</strong> // ALL RIGHTS RESERVED</span><span>SHADOW NETWORK • EST. 2026</span></footer></div>
+</main><footer class="foot"><span>© 2026 <strong>DAVIX SCRIPTS</strong> // ALL RIGHTS RESERVED</span><span>COMUNIDADE ROBLOX • DESDE 2026</span></footer></div>
 <script>
 (()=>{const canvas=document.getElementById('matrix');const ctx=canvas.getContext('2d');if(!ctx)return;let w,h,stars=[];const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;stars=Array.from({length:Math.min(95,Math.floor(w*h/14000))},()=>({x:Math.random()*w,y:Math.random()*h,v:.15+Math.random()*.5,s:Math.random()*1.4+.3}))}resize();window.addEventListener('resize',resize);function draw(){ctx.clearRect(0,0,w,h);for(const p of stars){ctx.fillStyle='rgba(255,55,90,.7)';ctx.fillRect(p.x,p.y,p.s,p.s);p.y+=p.v;if(p.y>h){p.y=0;p.x=Math.random()*w}}if(!reduced)requestAnimationFrame(draw)}draw()})();
 </script>
