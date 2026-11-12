@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#27050f">
+<meta name="description" content="Opções para computadores.">
+<title>Executores PC | Davix Scripts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Oxanium:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ff385d;--pink:#ff91a7;--ink:#12050c;--muted:#baa4ac;--line:rgba(255,99,128,.29)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#170309}
+body{margin:0;min-height:100vh;color:#fff6f7;font-family:'Chakra Petch',Arial,sans-serif;background:radial-gradient(ellipse 850px 600px at 81% 13%,rgba(245,28,64,.26),transparent 77%),radial-gradient(ellipse 700px 660px at 10% 67%,rgba(188,15,44,.25),transparent 78%),linear-gradient(130deg,#22050f,#10050a 42%,#2b0712 80%,#16040b);background-attachment:fixed;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(122deg,transparent 0 158px,rgba(255,70,99,.030) 160px 161px,transparent 163px 306px)}
+a{color:inherit}
+.wrap{max-width:1150px;margin:0 auto;padding:0 27px;position:relative;z-index:1}
+.top{display:flex;gap:16px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);min-height:85px}
+.brand{text-decoration:none;display:flex;align-items:center;gap:12px;font:800 23px 'Oxanium','Chakra Petch',sans-serif;letter-spacing:.5px}
+.brand-mark{display:grid;place-items:center;width:39px;height:39px;font:800 17px 'Oxanium',sans-serif;background:linear-gradient(135deg,#a61535,#3c0b1c);clip-path:polygon(50% 0,94% 25%,94% 75%,50% 100%,6% 75%,6% 25%)}
+.brand strong{color:#ff607b;font-weight:800}
+.back{border:1px solid var(--line);padding:12px 15px;text-decoration:none;font:700 11px 'JetBrains Mono',monospace;color:#ffc5ce;white-space:nowrap;transition:background .2s,border-color .2s}
+.back:hover{background:rgba(255,62,89,.13);border-color:#ff6680}
+.crumbs{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:26px;color:#dc8e9e;font:600 11px 'JetBrains Mono',monospace}
+.crumbs a{text-decoration:none;color:#dc8e9e}
+.crumbs a:hover{text-decoration:underline}
+.crumbs .sep{color:#7d4353}
+.hero{padding:65px 0 36px}
+.eyebrow{color:#ff6c89;font:700 11px 'JetBrains Mono',monospace;letter-spacing:2px}
+.hero h1{font:800 clamp(47px,7vw,86px)/1 'Oxanium','Chakra Petch',sans-serif;letter-spacing:-2px;margin:20px 0 15px;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:#ff5575}
+.hero p{color:#c4a9b3;font-size:17px;line-height:1.65;max-width:740px;margin:0}
+.section-mark{color:#ef92a2;display:flex;align-items:center;gap:15px;font:700 11px 'JetBrains Mono',monospace;letter-spacing:1.4px;margin:10px 0 22px}
+.section-mark:after{content:"";height:1px;background:linear-gradient(90deg,rgba(255,80,111,.60),transparent);flex:1}
+.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.choice-card{display:flex;flex-direction:column;min-height:286px;text-decoration:none;position:relative;overflow:hidden;background:linear-gradient(138deg,rgba(77,13,33,.93),rgba(24,7,16,.97));border:1px solid rgba(255,89,121,.4);padding:31px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.choice-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,#ff375f,transparent 80%)}
+.choice-card:after{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,76,109,.18);border-radius:50%;right:-88px;top:-100px;box-shadow:0 0 0 36px rgba(255,76,109,.04),0 0 0 75px rgba(255,76,109,.02)}
+.choice-card:hover{transform:translateY(-6px);border-color:#ff6685;box-shadow:0 18px 55px rgba(255,33,77,.16)}
+.choice-number{font:700 11px 'JetBrains Mono',monospace;letter-spacing:1.1px;color:#ff86a0}
+.choice-glyph{font:700 43px 'Oxanium',sans-serif;color:#ff6c87;margin:20px 0 5px}
+.choice-card h2{font:800 clamp(29px,4vw,43px) 'Oxanium',sans-serif;letter-spacing:0;margin:0 0 10px;text-transform:uppercase}
+.choice-card p{font-size:15px;line-height:1.5;color:#c5a5b1;margin:0 0 24px;max-width:450px}
+.choice-bottom{margin-top:auto;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding-top:18px;font:700 11px 'JetBrains Mono',monospace;color:#f5abb9;letter-spacing:1px}
+.choice-bottom b{font-size:24px;color:#ff577a}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.game{border:1px solid rgba(255,89,121,.35);background:linear-gradient(145deg,rgba(66,11,29,.92),rgba(17,7,14,.98));padding:24px;min-width:0;transition:transform .25s,border-color .25s}
+.game:hover{transform:translateY(-3px);border-color:rgba(255,102,131,.7)}
+.game .num,.game .kicker{font:700 10px 'JetBrains Mono',monospace;color:#ff91a3;letter-spacing:1.4px}
+.game-top{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.game-glyph{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(255,91,118,.35);color:#ff607d;background:rgba(255,55,90,.09);font:700 27px 'JetBrains Mono',monospace}
+.game h2{font:800 27px 'Oxanium','Chakra Petch',sans-serif;margin:24px 0 7px;letter-spacing:.2px}
+.game p{color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 16px}
+.codebox{background:#12070d;border:1px solid rgba(255,90,115,.24);padding:14px 15px;min-height:92px}
+.codebox pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;color:#ffc5cf;font:12px/1.75 'JetBrains Mono',monospace;margin:0}
+.actions{margin-top:14px;display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.copy-btn{border:1px solid rgba(255,94,124,.72);background:#531026;color:#fff4f5;padding:11px 16px;font:700 11px 'JetBrains Mono',monospace;cursor:pointer;transition:background .2s}
+.copy-btn:hover{background:#8d1b3d}
+.copy-status{font:700 11px 'JetBrains Mono',monospace;color:#ffc0cb;min-height:1.2em}
+.toolbar{display:flex;gap:15px;align-items:center;justify-content:space-between;margin:0 0 22px}
+.search{outline:0;width:min(450px,100%);padding:14px 16px;background:#190a12;border:1px solid rgba(255,100,126,.36);font:15px 'Chakra Petch',sans-serif;color:white}
+.search:focus{border-color:#ff6786}
+.count{font:700 11px 'JetBrains Mono',monospace;color:#ff87a0;white-space:nowrap}
+.empty{padding:25px;text-align:center;border:1px dashed var(--line);color:#e9aebc}
+.info-note{border-left:2px solid #ff5d7b;background:rgba(255,57,91,.055);padding:15px 18px;color:#c2a8b2;font-size:13px;line-height:1.6;margin-top:24px}
+.footer{border-top:1px solid var(--line);padding:25px 0 35px;color:#ac8391;font:10px 'JetBrains Mono',monospace;margin-top:76px;display:flex;justify-content:space-between;gap:16px}
+.footer strong{color:#ff8ca2}
+@media(max-width:760px){.choice-grid,.grid{grid-template-columns:1fr}.choice-card{min-height:250px}}
+@media(max-width:490px){.wrap{padding:0 16px}.top{min-height:74px}.brand{font-size:18px}.brand-mark{width:32px;height:32px}.back{padding:10px;font-size:9px}.hero{padding-top:44px}.hero h1{letter-spacing:-1px}.toolbar{align-items:stretch;flex-direction:column}.choice-card{padding:24px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:.17s ease both fade-out}
+::view-transition-new(root){animation:.26s ease both fade-in}
+@keyframes fade-out{to{opacity:0;transform:translateY(-5px)}}
+@keyframes fade-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+</style></head><body>
+<div class="wrap"><header class="top"><a href="index.html" class="brand"><span class="brand-mark">D</span><span>DAVIX <strong>SCRIPTS</strong></span></a><a href="executores.html" class="back">← VOLTAR</a></header>
+<nav class="crumbs" aria-label="Navegação"><a href="index.html">Início</a> <span class="sep">/</span> <a href="executores.html">Executores</a> <span class="sep">/</span> <strong>PC</strong></nav>
+<main><section class="hero"><div class="eyebrow">&gt; DAVIX SCRIPTS // CATÁLOGO</div><h1>Executores <em>PC</em></h1><p>Opções para computadores.</p></section><div class="section-mark">EXECUTORES CADASTRADOS</div><div class="grid"><article class="game"><div class="game-top"><span class="num">01 // PC</span><span class="game-glyph" aria-hidden="true">⌘</span></div><h2>Real Executor</h2><p>Executor listado no catálogo Davix Scripts para computadores.</p><div class="choice-bottom">PC <b aria-hidden="true">↗</b></div></article><article class="game"><div class="game-top"><span class="num">02 // PC</span><span class="game-glyph" aria-hidden="true">⌘</span></div><h2>Madium</h2><p>Executor listado no catálogo Davix Scripts para computadores.</p><div class="choice-bottom">PC <b aria-hidden="true">↗</b></div></article><article class="game"><div class="game-top"><span class="num">03 // PC</span><span class="game-glyph" aria-hidden="true">⌘</span></div><h2>Velocity</h2><p>Executor listado no catálogo Davix Scripts para computadores.</p><div class="choice-bottom">PC <b aria-hidden="true">↗</b></div></article></div><p class="info-note">Esta página apresenta nomes de executores, sem links de download. Softwares de terceiros podem oferecer riscos à segurança e à conta; verifique a procedência.</p></main>
+<footer class="footer"><span>© 2026 <strong>DAVIX SCRIPTS</strong></span><span>COMUNIDADE ROBLOX</span></footer></div>
+</body></html>

@@ -2,14 +2,14 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#27050f">
-<meta name="description" content="Davix Scripts — scripts para Blox Fruits, hubs e comunidade Roblox.">
-<title>DAVIX SCRIPTS | Scripts Blox Fruits e Comunidade</title>
+<meta name="description" content="Davix Scripts — scripts de Blox Fruits e King Legacy, executores e comunidade Roblox.">
+<title>DAVIX SCRIPTS | Scripts e Executores</title>
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Davix Scripts">
 <meta property="og:url" content="https://davixscripts.github.io/davixscripts/">
-<meta property="og:title" content="DAVIX SCRIPTS | Scripts Blox Fruits e Comunidade">
-<meta property="og:description" content="Explore scripts para Blox Fruits e participe da comunidade Davix Scripts!">
+<meta property="og:title" content="DAVIX SCRIPTS | Scripts e Executores">
+<meta property="og:description" content="Explore scripts de Blox Fruits e King Legacy, além de opções de executores para Mobile e PC.">
 <meta property="og:image" content="https://davixscripts.github.io/davixscripts/davix-embed.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="960">
@@ -133,15 +133,61 @@ body::after { opacity:.10; }
   .scripts-entry,.social-card { transition:none !important; }
 }
 
+
+/* DAVIX // portal principal, entradas para scripts e executores */
+.portal-section{padding:1px 0 55px}
+.portal-head{display:flex;align-items:center;gap:14px;margin:4px 0 20px;color:#ff8da0;font:700 11px 'JetBrains Mono',monospace;letter-spacing:2px;text-transform:uppercase}
+.portal-head:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,rgba(255,65,93,.60),transparent)}
+.portal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.portal-card{min-height:290px;padding:30px 30px 24px;position:relative;display:flex;flex-direction:column;isolation:isolate;overflow:hidden;border:1px solid rgba(255,85,112,.50);color:#fff;text-decoration:none;background:linear-gradient(132deg,rgba(72,11,30,.90),rgba(22,7,16,.98));box-shadow:0 17px 50px rgba(11,0,5,.15);transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s}
+.portal-card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#ff2c55 5%,#ff7993 32%,transparent 75%)}
+.portal-card:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-120px;top:-123px;border:1px solid rgba(255,76,102,.16);box-shadow:0 0 0 43px rgba(255,49,83,.028),0 0 0 90px rgba(255,49,83,.020);pointer-events:none}
+.portal-card:hover{transform:translateY(-6px);border-color:#ff6680;box-shadow:0 23px 62px rgba(233,23,61,.18)}
+.portal-index{display:flex;gap:12px;align-items:center;color:#ed8799;font:600 10px 'JetBrains Mono',monospace;letter-spacing:1.7px}
+.portal-icon{display:grid;place-items:center;width:56px;height:56px;border:1px solid rgba(255,94,123,.45);background:rgba(255,56,89,.08);color:#ff5b7b;font:700 27px 'JetBrains Mono',monospace;margin:23px 0 14px}
+.portal-card h2{font:800 clamp(31px,4vw,46px) 'Oxanium','Chakra Petch',sans-serif;letter-spacing:.2px;text-transform:uppercase;line-height:1.1;margin:0 0 9px}
+.portal-card p{color:#c6a9b3;margin:0 0 20px;font-size:15px;line-height:1.5;max-width:410px}
+.portal-labels{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;margin-bottom:23px}
+.portal-labels span{color:#f2acb9;border:1px solid rgba(255,113,133,.21);padding:5px 9px;font:600 10px 'JetBrains Mono',monospace;letter-spacing:.6px}
+.portal-foot{border-top:1px solid rgba(255,109,136,.22);display:flex;justify-content:space-between;align-items:center;padding-top:16px;color:#ff9bac;font:700 11px 'JetBrains Mono',monospace;letter-spacing:1.2px}
+.portal-foot b{font-size:23px;line-height:1;color:#ff5070;transition:transform .25s}
+.portal-card:hover .portal-foot b{transform:translate(3px,-3px)}
+@media(max-width:680px){.portal-grid{grid-template-columns:1fr}.portal-card{min-height:260px}.portal-section{padding-bottom:44px}}
+@media(prefers-reduced-motion:reduce){.portal-card,.portal-foot b{transition:none!important}}
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:.17s ease both fade-out}
+::view-transition-new(root){animation:.26s ease both fade-in}
+@keyframes fade-out{to{opacity:0;transform:translateY(-5px)}}
+@keyframes fade-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
 </style>
 </head>
 <body><canvas id="matrix" aria-hidden="true"></canvas>
 <div class="wrap">
 <header class="topbar"><div class="brand"><span class="brand-mark">D</span><span class="brand-title">DAVIX <strong>SCRIPTS</strong></span></div><div class="online"><span class="dot"></span>SYSTEM ONLINE</div></header>
 <main><section class="hero"><div class="hero-copy"><div class="eyebrow">&gt; BEM-VINDO À MAIOR COMUNIDADE DE SCRIPTS PARA ROBLOX DO BRASIL</div><h1>DAVIX<span class="scripts stroke">SCRIPTS</span></h1><div class="accent-line"></div><p>Entre na nossa comunidade do discord, á melhor comunidade de scripts do Brasil</p><a class="cta" href="#connect">◆ EXPLORAR A REDE <span>↗</span></a></div><div class="visual"><div class="ninja-wrap"><svg viewBox="0 0 400 440" role="img" aria-label="Ilustração de ninja futurista vermelho"><defs><linearGradient id="hood" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#451522"/><stop offset=".55" stop-color="#1a0e15"/><stop offset="1" stop-color="#7d172e"/></linearGradient><linearGradient id="mask" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#100b11"/><stop offset="1" stop-color="#4d1626"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M200 19 327 83 367 215 321 353 200 420 79 353 33 215 73 83Z" fill="#190b13" stroke="#ff3556" stroke-width="2.5"/><path d="M200 48 303 104 333 214 297 329 200 384 103 329 67 214 97 104Z" fill="url(#hood)" stroke="#a62742" stroke-width="5"/><path d="M200 82 279 128 299 218 270 298 200 344 130 298 101 218 121 128Z" fill="#08090d" stroke="#e32c4d" stroke-width="2"/><path d="M122 197 151 148 200 125 249 148 278 197 264 263 200 310 136 263Z" fill="#130e14"/><path d="M126 202 174 214 185 236 149 230Z" fill="#ff405f" filter="url(#glow)"/><path d="M274 202 226 214 215 236 251 230Z" fill="#ff405f" filter="url(#glow)"/><path d="M141 248 200 262 259 248 246 287 200 315 154 287Z" fill="url(#mask)" stroke="#8d2941" stroke-width="2"/><path d="M165 274 200 287 235 274" fill="none" stroke="#ff5470" stroke-width="2"/><path d="M91 140 61 214 94 290M309 140 339 214 306 290" stroke="#ff3658" stroke-width="2" fill="none" opacity=".8"/><path d="M200 20V0M200 420v20M33 215H8M367 215h25" stroke="#ff3758" stroke-width="2"/></svg></div></div></section>
-<a class="scripts-entry" href="scripts.html" data-page-link="true" aria-label="Abrir página de scripts Blox Fruits"><div><h2>→ SCRIPTS BLOX FRUITS</h2><p>Acesse todos os scripts para Blox Fruits</p></div><span class="go" aria-hidden="true">↗</span></a>
+<section class="portal-section" aria-label="Categorias principais">
+<div class="portal-head">EXPLORE O CATÁLOGO <span>// 02 ÁREAS</span></div>
+<div class="portal-grid">
+  <a class="portal-card" href="scripts.html" aria-label="Abrir seção Scripts">
+    <div class="portal-index">01 / CATÁLOGO DE JOGOS</div>
+    <div class="portal-icon" aria-hidden="true">&lt;/&gt;</div>
+    <h2>Scripts</h2>
+    <p>Explore os hubs separados por jogo e copie os códigos diretamente na página.</p>
+    <div class="portal-labels"><span>BLOX FRUITS</span><span>KING LEGACY</span></div>
+    <div class="portal-foot">VER JOGOS <b aria-hidden="true">↗</b></div>
+  </a>
+  <a class="portal-card" href="executores.html" aria-label="Abrir seção Executores">
+    <div class="portal-index">02 / CATÁLOGO DE EXECUTORES</div>
+    <div class="portal-icon" aria-hidden="true">⌘</div>
+    <h2>Executores</h2>
+    <p>Veja os executores organizados por plataforma: celular ou computador.</p>
+    <div class="portal-labels"><span>MOBILE</span><span>PC</span></div>
+    <div class="portal-foot">VER CATEGORIAS <b aria-hidden="true">↗</b></div>
+  </a>
+</div></section>
   <section id="connect" class="social-section" aria-labelledby="social-title">
-    <h2 class="section-title" id="social-title"><span>01 /</span> Nossas redes sociais</h2>
+    <h2 class="section-title" id="social-title"><span>02 /</span> Nossas redes sociais</h2>
     <p class="social-subtitle">Conecte-se com a Davix Scripts pelos nossos canais oficiais.</p>
     <div class="cards social-cards">
       <a class="card social-card social-discord" href="https://discord.gg/7Sf28AV9WZ" target="_blank" rel="noopener noreferrer" aria-label="Abrir Discord Davix Scripts">
@@ -184,21 +230,5 @@ body::after { opacity:.10; }
 <script>
 (()=>{const canvas=document.getElementById('matrix');const ctx=canvas.getContext('2d');if(!ctx)return;let w,h,stars=[];const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;stars=Array.from({length:Math.min(95,Math.floor(w*h/14000))},()=>({x:Math.random()*w,y:Math.random()*h,v:.15+Math.random()*.5,s:Math.random()*1.4+.3}))}resize();window.addEventListener('resize',resize);function draw(){ctx.clearRect(0,0,w,h);for(const p of stars){ctx.fillStyle='rgba(255,55,90,.7)';ctx.fillRect(p.x,p.y,p.s,p.s);p.y+=p.v;if(p.y>h){p.y=0;p.x=Math.random()*w}}if(!reduced)requestAnimationFrame(draw)}draw()})();
 </script>
-<script>
-// Transição curta sem bloquear a navegação, inclusive após voltar pelo navegador.
-(()=>{
-  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-  window.addEventListener('pageshow',()=>document.body.classList.remove('davix-leaving'));
-  document.querySelectorAll('a[data-page-link]').forEach(link=>{
-    link.addEventListener('click',event=>{
-      if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
-      if(reduceMotion.matches)return;
-      event.preventDefault();
-      if(document.body.classList.contains('davix-leaving'))return;
-      document.body.classList.add('davix-leaving');
-      window.setTimeout(()=>{window.location.assign(link.href)},170);
-    });
-  });
-})();
-</script>
+
 </body></html>
