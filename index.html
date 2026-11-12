@@ -38,6 +38,28 @@
 @media(max-width:1490px){.edge-ui{display:none}}
 @media(max-width:780px){.brand-title{font-size:18px;letter-spacing:.7px}.brand-title strong{letter-spacing:.4px}}
 @media(prefers-reduced-motion:reduce){.edge-ui,.edge-caret{animation:none!important}}
+
+/* DAVIX // Transição clean entre páginas (navegação interna) */
+@view-transition { navigation: auto; }
+@keyframes davix-page-out {
+  from { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  to   { opacity: 0; transform: translateY(-8px) scale(.994); filter: blur(2px); }
+}
+@keyframes davix-page-in {
+  from { opacity: 0; transform: translateY(12px) scale(.994); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+::view-transition-old(root) {
+  animation: 230ms cubic-bezier(.4,0,.6,1) both davix-page-out;
+}
+::view-transition-new(root) {
+  animation: 400ms cubic-bezier(.22,1,.36,1) both davix-page-in;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) {
+    animation-duration: .01ms !important;
+  }
+}
 </style>
 </head>
 <body><canvas id="matrix" aria-hidden="true"></canvas>
